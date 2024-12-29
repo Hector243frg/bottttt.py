@@ -1,4 +1,3 @@
-from model import get_class
 import discord
 from discord.ext import commands
 import random
@@ -31,17 +30,6 @@ async def add(ctx, left: int, right: int):
     """Adds two numbers together."""
     await ctx.send(left + right)
 
-
-@bot.command()
-async def check(ctx):
-    if ctx.message.attachments:
-        for attachment in ctx.message.attachments:
-            file_name = attachment.filename
-            file_url = attachment.url
-            await attachment.save(f"./{attachment.filename}")
-            await ctx.send(get_class(model_path="./keras_model.h5", labels_path="labels.txt", image_path=f"./{attachment.filename}"))
-    else:
-        await ctx.send("You forgot to upload the image :(")
 @bot.command()
 async def roll(ctx, dice: str):
     """Rolls a dice in NdN format."""
