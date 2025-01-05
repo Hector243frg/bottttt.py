@@ -1,11 +1,10 @@
 import discord
 from discord.ext import commands
 import random
-from settings import settings
 import webserver
 import os
 
-DISCORD_TOKEN = os.getenv("")
+DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 
 description = '''An example bot to showcase the discord.ext.commands extension
 module.
